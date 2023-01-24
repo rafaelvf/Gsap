@@ -1,0 +1,288 @@
+html,
+body,
+.wrapper {
+  min-height: 100%;
+}
+body {
+  font: 16px/1.5 "Open Sans", Helvetica, Helvetica Neue, Arial, sans-serif;
+  background-color: #2e2e30;
+  color: #222;
+  overflow-x: hidden;
+  height: 100%;
+  transition: background-color 0.4s linear;
+}
+body.project00 {
+  background-color: #4d5126;
+}
+body.project01 {
+  background-color: #a8b183;
+}
+body.project02 {
+  background-color: #988685;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* =Project Slides */
+.projects {
+  height: 100vh;
+  position: relative;
+  visibilty: hidden;
+  opacity: 0;
+}
+.project {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.project-image,
+.project-image img,
+.project-image:before,
+.project-image:after {
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+}
+.project-image:before {
+  animation: move1 5s linear 0s infinite alternate;
+}
+.project-image:after {
+  transform: rotate(0deg) translate(0px, 0);
+  animation: move2 7s linear 0s infinite alternate;
+}
+@keyframes move1 {
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(-190deg) translate(-5px, -5px);
+  }
+  100% {
+    transform: rotate(-360deg) translate(0, 0);
+  }
+}
+@keyframes move2 {
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(-190deg) translate(-5px, 7px);
+  }
+  100% {
+    transform: rotate(-360deg) translate(0, 0);
+  }
+}
+.project-image:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(242, 236, 189, 0.8);
+  top: -5px;
+  left: -5px;
+  z-index: 2;
+}
+.project-image:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(121, 140, 29, 0.3);
+  bottom: -6px;
+  right: -6px;
+  z-index: 3;
+}
+.project-image {
+  position: relative;
+  width: 224px;
+  height: 224px;
+  margin: 20vh auto 0 auto;
+  z-index: 5;
+}
+.project-image img {
+  position: relative;
+  z-index: 4;
+  display: block;
+}
+.project-title {
+  text-transform: uppercase;
+  color: #f2ecbd;
+  font-size: 25px;
+  margin: 20px auto 0 auto;
+  font-family: "Exo 2", sans-serif;
+}
+.project-subtitle {
+  font-size: 16px;
+  color: rgba(242, 236, 189, 0.7);
+  margin: 0;
+  text-transform: lowercase;
+  font-style: italic;
+}
+
+.button-container {
+  position: relative;
+}
+
+a.button {
+  text-decoration: none;
+  width: 150px;
+  display: inline-block;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 8px 0;
+  border: 1px rgba(255, 255, 255, 1) solid;
+  border-radius: 2px;
+}
+
+/* =GameBoy */
+.project01 .project-title {
+  color: #282c1b;
+}
+.project01 .project-subtitle {
+  color: rgba(40, 44, 27, 0.7);
+}
+.project01 .project-image:before {
+  background-color: rgba(40, 44, 27, 0.8);
+}
+.project01 .project-image:after {
+  background-color: rgba(89, 96, 117, 0.6);
+}
+
+/* =SVG Christmas */
+.project02 .project-title {
+  color: #473432;
+}
+.project02 .project-subtitle {
+  color: rgba(71, 52, 50, 0.7);
+}
+.project02 .project-image:before {
+  background-color: rgba(254, 182, 0, 0.7);
+}
+.project02 .project-image:after {
+  background-color: rgba(234, 93, 71, 0.6);
+}
+
+/* =Navigation */
+button.btn {
+  display: block;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 100%;
+  transition: all 0.3s linear;
+  overflow: hidden;
+
+  position: absolute;
+  top: 30vh;
+  z-index: 1;
+}
+button.btn.next {
+  left: auto;
+  right: 0;
+}
+button.btn span {
+  display: none;
+}
+button.btn:hover,
+button.btn:focus,
+button.btn:active {
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 100%;
+  cursor: pointer;
+}
+button.btn:before {
+  content: "\2039";
+  display: block;
+  position: absolute;
+  top: -13px;
+  font-size: 70px;
+  font-weight: 300;
+}
+button.btn.prev:before {
+  content: "\2039";
+  left: 23px;
+}
+button.btn.next:before {
+  content: "\203a";
+  left: 28px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 10vh;
+  left: 0;
+  right: 0;
+  top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dot {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 20px;
+  height: 20px;
+  text-indent: -9999em;
+  overflow: hidden;
+  border: none;
+  border-radius: 100%;
+  transition: all 0.3s linear;
+  margin: 0 8px;
+  cursor: pointer;
+}
+.dot:focus,
+.dot:active,
+.dot:hover {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.dot.active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.spot {
+  background-color: rgba(255, 255, 255, 1);
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  top: 5px;
+  z-index: -1;
+  position: absolute;
+}
+
+/* ==========================================================================
+    Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+  .project-title {
+    max-width: 80%;
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .project-title {
+    max-width: 80%;
+    font-size: 40px;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+}
